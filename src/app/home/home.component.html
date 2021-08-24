@@ -1,0 +1,28 @@
+<!-- <SomeComponent></SomeComponent> -->
+<input type="text" [(ngModel)]='email' placeholder="enter you email"  >
+<p>my name is  : {{nameOf}}</p>
+<p>the email is {{email}}</p>
+
+<ul *ngFor="let task of todos; let i=index">
+    <li>{{todos[i]}}</li>
+    <button (click)='deleteTask(i)'>delete</button>
+    <button (click)='showInForUpdate(i)'>update this task</button>
+</ul>
+<br/>
+
+<div *ngIf='a; then thenBlock  else elseBlock'></div>
+    <ng-template #thenBlock> 
+        <input type="text" [(ngModel)]='task' placeholder="write the task"> 
+        <button (click)="addToList()">add to list </button>
+    </ng-template>
+    <ng-template #elseBlock>
+        <input type="text" [(ngModel)]='updateTask' placeholder="write the new task"> 
+        <button (click)="updateTheTask()">update the task </button>
+    </ng-template>
+
+<br>
+
+<p [style.color]="color?'red':'green'">conditional style </p>
+
+<button (click)="changeColor()">change color </button>
+<br>
